@@ -1,4 +1,13 @@
+import gamemanager.GameManager
+
 fun main()
 {
-    println("Hello World!")
+    val game: GameManager = GameManager()
+
+    game.startGame()
+
+    while (!game.endGame)
+    {
+        game.updateGame()
+    }
 }
