@@ -13,4 +13,8 @@ abstract class Player (): Character {
     val armor: Armor = BasicArmor()
     abstract val weapon: Weapon
     val backpack: Backpack = BasicBackpack()
+
+    override fun getCharacterType (): String {
+        return "Player"
+    }
 }
