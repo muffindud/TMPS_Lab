@@ -1,6 +1,6 @@
 package item
 
 interface Item {
-    val slots: Int
-    val weight: Int
+    var slots: Int
+    var weight: Int
 }

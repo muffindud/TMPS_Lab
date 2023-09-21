@@ -2,7 +2,7 @@ import gamemanager.GameManager
 
 fun main()
 {
-    val game: GameManager = GameManager()
+    var game: GameManager = GameManager()
 
     game.startGame()
 

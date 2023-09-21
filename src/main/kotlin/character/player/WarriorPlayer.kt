@@ -6,8 +6,8 @@ import item.equipment.armor.armors.*
 import item.equipment.weapon.PhysicalWeapon
 import item.equipment.weapon.physicalweapons.*
 
-class WarriorPlayer(override val playerName: String, override val xPosition: Int, override val yPosition: Int): Player() {
-    override val weapon: PhysicalWeapon = BasicSword()
+class WarriorPlayer(override var playerName: String, override var xPosition: Int, override var yPosition: Int): Player() {
+    override var weapon: PhysicalWeapon = BasicSword()
 
     override fun attack (target: Character) {
         TODO()

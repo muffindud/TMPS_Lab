@@ -4,7 +4,7 @@ import character.*
 import item.*
 
 class GameManager {
-    val endGame: Boolean = false
+    var endGame: Boolean = false
     
     // Run at the start of the game
     fun startGame()

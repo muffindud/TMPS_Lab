@@ -1,9 +1,9 @@
 package character
 
 interface Character {
-    val healthPoints: Int
-    val xPosition: Int
-    val yPosition: Int
+    var healthPoints: Int
+    var xPosition: Int
+    var yPosition: Int
 
     fun attack(target: Character)
     fun getCharacterType() : String

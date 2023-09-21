@@ -4,5 +4,5 @@ import item.equipment.weapon.MagicWeapon
 
 final class BasicCatalyst: MagicWeapon() {
     override var attackDamage: Int = 10
-    override val weight: Int = 5
+    override var weight: Int = 5
 }

@@ -8,11 +8,27 @@ import item.equipment.backpack.Backpack
 import item.equipment.backpack.backpacks.*
 
 abstract class Player (): Character {
-    override val healthPoints: Int = 200
-    abstract val playerName: String
-    val armor: Armor = BasicArmor()
+    override var healthPoints: Int = 200
+    abstract var playerName: String
+    var armor: Armor = BasicArmor()
     abstract val weapon: Weapon
-    val backpack: Backpack = BasicBackpack()
+    var backpack: Backpack = BasicBackpack()
+
+    protected fun attackPlayer (target: Player) {
+        var damage: Int = 0
+
+        if (this.weapon.getWeaponType() == "Physical") {
+            damage = this.weapon.attackDamage - target.armor.physicalDefence
+        }
+        else if (this.weapon.getWeaponType() == "Magic") {
+            damage = this.weapon.attackDamage - target.armor.magicDefence
+        }
+        
+        if (damage > 0) {
+            target.healthPoints -= damage
+        }
+    }
+
 
     override fun getCharacterType (): String {
         return "Player"
