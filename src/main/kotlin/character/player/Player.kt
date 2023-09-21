@@ -14,7 +14,7 @@ abstract class Player (): Character {
     abstract val weapon: Weapon
     var backpack: Backpack = BasicBackpack()
 
-    protected fun attackPlayer (target: Player) {
+    private fun attackPlayer (target: Player) {
         var damage: Int = 0
 
         if (this.weapon.getWeaponType() == "Physical") {
@@ -23,14 +23,22 @@ abstract class Player (): Character {
         else if (this.weapon.getWeaponType() == "Magic") {
             damage = this.weapon.attackDamage - target.armor.magicDefence
         }
-        
+
         if (damage > 0) {
             target.healthPoints -= damage
         }
     }
 
-
     override fun getCharacterType (): String {
         return "Player"
+    }
+
+    override fun attack (target: Character) {
+        if (target.getCharacterType() == "Player") {
+            attackPlayer(target as Player)
+        }
+        else {
+            var damage: Int = this.weapon.attackDamage
+        }
     }
 }
