@@ -8,6 +8,10 @@
 &ensp;&ensp; This repository contains the laboratory works on the TMPS subject.
 The links bellow will redirect you to the commit/branch of the respective laboratory work.
 
+&ensp; &ensp; The laboratory works are written in the Kotlin programming language.
+
+&ensp; &ensp; The domain chosen for the laboratory works is a simple RPG game.
+
 ## Laboratory works
 
 [//]: # ([Laboratory Work #1]&#40;--link--&#41;)
