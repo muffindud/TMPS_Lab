@@ -10,18 +10,46 @@ import item.equipment.backpack.backpacks.*
 abstract class Player (): Character {
     override var healthPoints: Int = 200
     abstract var playerName: String
+
+    abstract var weapon: Weapon
     var armor: Armor = BasicArmor()
-    abstract val weapon: Weapon
     var backpack: Backpack = BasicBackpack()
+
+    var attackPower: Int = 0
+    var magicDefense: Int = 0
+    var physicalDefense: Int = 0
+
+    init {
+        this.attackPower += this.weapon.attackDamage
+        this.magicDefense += this.armor.magicDefence
+        this.physicalDefense += this.armor.physicalDefence
+    }
+
+    fun equipArmor (armor: Armor) {
+        this.magicDefense -= this.armor.magicDefence
+        this.physicalDefense -= this.armor.physicalDefence
+        this.armor.drop()
+        this.armor = armor
+        this.magicDefense += this.armor.magicDefence
+        this.physicalDefense += this.armor.physicalDefence
+    }
+
+    fun equipWeapon (weapon: Weapon) {
+        this.attackPower -= this.weapon.attackDamage
+        this.weapon.drop()
+        this.weapon = weapon
+        this.attackPower += this.weapon.attackDamage
+
+    }
 
     private fun attackPlayer (target: Player) {
         var damage: Int = 0
 
         if (this.weapon.getWeaponType() == "Physical") {
-            damage = this.weapon.attackDamage - target.armor.physicalDefence
+            damage = this.attackPower - target.physicalDefense
         }
         else if (this.weapon.getWeaponType() == "Magic") {
-            damage = this.weapon.attackDamage - target.armor.magicDefence
+            damage = this.attackPower - target.magicDefense
         }
 
         if (damage > 0) {
@@ -38,7 +66,7 @@ abstract class Player (): Character {
             attackPlayer(target as Player)
         }
         else {
-            var damage: Int = this.weapon.attackDamage
+            var damage: Int = this.attackPower
         }
     }
 }
