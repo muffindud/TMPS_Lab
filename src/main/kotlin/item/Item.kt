@@ -1,6 +1,7 @@
 package item
 
-interface Item {
+interface Item
+{
     var slots: Int
     var weight: Int
 

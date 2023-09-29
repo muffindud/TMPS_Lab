@@ -7,13 +7,15 @@ import item.equipment.weapon.Weapon
 import item.equipment.backpack.Backpack
 import item.equipment.backpack.backpacks.*
 
-abstract class Player (): Character {
+abstract class Player
+    (
+        var armor: Armor,
+        var backpack: Backpack,
+        var weapon: Weapon
+    ): Character
+{
     override var healthPoints: Int = 200
     abstract var playerName: String
-
-    abstract var weapon: Weapon
-    var armor: Armor = BasicArmor()
-    var backpack: Backpack = BasicBackpack()
 
     var attackPower: Int = 0
     var magicDefense: Int = 0
