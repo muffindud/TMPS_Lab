@@ -1,6 +1,7 @@
 package character
 
-interface Character {
+interface Character
+{
     var healthPoints: Int
     var xPosition: Int
     var yPosition: Int
