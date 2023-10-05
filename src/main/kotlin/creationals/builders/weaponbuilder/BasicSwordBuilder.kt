@@ -1,4 +1,4 @@
-package creationals.builders.swordbuilders
+package creationals.builders.weaponbuilder
 
 import item.equipment.weapon.PhysicalWeapon
 

@@ -1,4 +1,4 @@
-package creationals.builders.swordbuilders
+package creationals.builders.weaponbuilder
 
 interface WeaponBuilder {
     var attackDamage: Int

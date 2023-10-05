@@ -7,5 +7,5 @@ interface Character
     var yPosition: Int
 
     fun attack(target: Character)
-    fun getCharacterType() : String
+    fun getCharacterType(): String
 }

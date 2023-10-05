@@ -1,22 +1,23 @@
 package gamemanager
 
-import character.*
-import character.player.*
-import character.player.WarriorPlayer
-import item.*
-import item.equipment.armor.*
-import item.equipment.backpack.*
-import item.equipment.backpack.backpacks.*
-import item.equipment.armor.armors.BasicArmor
-import item.equipment.weapon.PhysicalWeapon
-import item.equipment.weapon.physicalweapons.BasicSword
+import creationals.builders.armorbuilders.*
+import creationals.builders.backpackbuilders.*
+import creationals.builders.weaponbuilder.*
 
 class GameManager
 {
     var endGame: Boolean = false
 
+    val basicArmorBuilder: ArmorBuilder = BasicArmorBuilder()
+    val basicBackpackBuilder: BackpackBuilder = BasicBackpackBuilder()
+    val basicWeaponBuilder: WeaponBuilder = BasicSwordBuilder()
+    val basicCatalystBuilder: WeaponBuilder = BasicCatalystBuilder()
+
     // Singleton
-    private val instance: GameManager? = null
+    companion object
+    {
+        private val instance: GameManager? = null
+    }
 
     fun getInstance(): GameManager
     {
