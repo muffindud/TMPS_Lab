@@ -1,6 +1,6 @@
 package item.equipment.weapon
 
-abstract class MagicWeapon: Weapon()
+class MagicWeapon(override var attackDamage: Int, override var weight: Int): Weapon()
 {
     override var slots: Int = 2
 

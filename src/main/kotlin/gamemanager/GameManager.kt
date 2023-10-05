@@ -14,19 +14,33 @@ import item.equipment.weapon.physicalweapons.BasicSword
 class GameManager
 {
     var endGame: Boolean = false
-    
-    // Run at the start of the game
-    fun startGame()
+
+    // Singleton
+    private val instance: GameManager? = null
+
+    fun getInstance(): GameManager
     {
-        var armor: Armor = BasicArmor()
-        var backpack: Backpack = BasicBackpack()
-        var sword: PhysicalWeapon = BasicSword()
-        var player: Player = WarriorPlayer("Joe", 0, 0, armor, backpack, sword)
+        return instance ?: GameManager()
+    }
+
+    init {
+        startGame()
+    }
+
+    // Run at the start of the game
+    private fun startGame()
+    {
+        //
+
+        while (!endGame)
+        {
+            updateGame()
+        }
     }
     
     // Run every frame
-    fun updateGame()
+    private fun updateGame()
     {
-        
+        //
     }
 }
