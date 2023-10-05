@@ -2,10 +2,7 @@ package item.equipment.armor
 
 import item.equipment.Equipment
 
-abstract class Armor: Equipment()
+class Armor(var physicalDefence: Int, var magicDefence: Int, override var weight: Int): Equipment()
 {
-    open var physicalDefence: Int = 0
-    open var magicDefence: Int = 0
     override var slots: Int = 4
-    override var weight: Int = 10
 }

@@ -2,10 +2,8 @@ package character.player
 
 import character.Character
 import item.equipment.armor.Armor
-import item.equipment.armor.armors.*
 import item.equipment.weapon.Weapon
 import item.equipment.backpack.Backpack
-import item.equipment.backpack.backpacks.*
 
 abstract class Player
     (
