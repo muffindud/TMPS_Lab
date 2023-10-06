@@ -2,10 +2,17 @@ package creationals.builders.armorbuilders
 import item.equipment.armor.Armor
 
 
-interface ArmorBuilder {
-    var physicalDefence: Int
-    var magicDefence: Int
-    var weight: Int
+abstract class ArmorBuilder
+{
+    abstract var physicalDefence: Int
+    abstract var magicDefence: Int
+    abstract var weight: Int
 
-    fun build(): Armor
+    fun build(): Armor {
+        return Armor(
+            this.physicalDefence,
+            this.magicDefence,
+            this.weight
+        )
+    }
 }

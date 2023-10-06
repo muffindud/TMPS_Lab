@@ -1,17 +1,10 @@
 package gamemanager
 
-import creationals.builders.armorbuilders.*
-import creationals.builders.backpackbuilders.*
-import creationals.builders.weaponbuilder.*
+import creationalclasses.*
 
-class GameManager
+class GameManager private constructor()
 {
     var endGame: Boolean = false
-
-    val basicArmorBuilder: ArmorBuilder = BasicArmorBuilder()
-    val basicBackpackBuilder: BackpackBuilder = BasicBackpackBuilder()
-    val basicWeaponBuilder: WeaponBuilder = BasicSwordBuilder()
-    val basicCatalystBuilder: WeaponBuilder = BasicCatalystBuilder()
 
     // Singleton
     companion object
@@ -19,13 +12,19 @@ class GameManager
         private val instance: GameManager? = null
     }
 
+    init {
+        startGame()
+    }
+
+    // Builders
+    val builders: Builders = Builders().getInstance()
+
+    // Prototypes
+    val prototypes: Prototypes = Prototypes().getInstance()
+
     fun getInstance(): GameManager
     {
         return instance ?: GameManager()
-    }
-
-    init {
-        startGame()
     }
 
     // Run at the start of the game

@@ -69,4 +69,6 @@ abstract class Player
             var damage: Int = this.attackPower
         }
     }
+
+    abstract fun clone(source: Player): Player
 }

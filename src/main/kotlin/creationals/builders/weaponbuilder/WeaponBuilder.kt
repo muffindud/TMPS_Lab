@@ -1,6 +1,12 @@
 package creationals.builders.weaponbuilder
 
-interface WeaponBuilder {
+import item.equipment.weapon.PhysicalWeapon
+import item.equipment.weapon.Weapon
+
+interface WeaponBuilder
+{
     var attackDamage: Int
     var weight: Int
+
+    fun build(): Weapon
 }

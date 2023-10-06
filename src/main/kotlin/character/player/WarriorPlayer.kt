@@ -13,8 +13,17 @@ class WarriorPlayer
         override var yPosition: Int,
         armor: Armor,
         backpack: Backpack,
-        weapon: PhysicalWeapon
+        weapon: Weapon
     ): Player(armor, backpack, weapon)
 {
-
+    override fun clone(source: Player): WarriorPlayer {
+        return WarriorPlayer(
+            source.playerName,
+            source.xPosition,
+            source.yPosition,
+            source.armor,
+            source.backpack,
+            source.weapon as PhysicalWeapon
+        )
+    }
 }
