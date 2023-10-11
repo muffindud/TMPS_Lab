@@ -106,4 +106,4 @@ private fun attackPlayer (target: Player) {
 
 ## Conclusions / Screenshots / Results
 
-![alt text](reports/img/Diagram.png)
+![alt text](img/Diagram.png)
