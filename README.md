@@ -15,4 +15,4 @@ The links bellow will redirect you to the commit/branch of the respective labora
 ## Laboratory works
 
 [Laboratory Work #1](https://github.com/muffindud/TMPS_Lab/tree/3896987ea4d6d448a8986abf9512fccba6e06a6e)
-
+[Laboratory Work #2](https://github.com/muffindud/TMPS_Lab/tree/734e962d94f78f4674031fe33a49a56c2449ef83)
