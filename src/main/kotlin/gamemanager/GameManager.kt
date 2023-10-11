@@ -1,8 +1,9 @@
 package gamemanager
 
 import creationalclasses.*
+import creationals.factories.*
 
-class GameManager private constructor()
+class GameManager
 {
     var endGame: Boolean = false
 
@@ -10,6 +11,11 @@ class GameManager private constructor()
     companion object
     {
         private val instance: GameManager? = null
+    }
+
+    fun getInstance(): GameManager
+    {
+        return instance ?: GameManager()
     }
 
     init {
@@ -22,10 +28,8 @@ class GameManager private constructor()
     // Prototypes
     val prototypes: Prototypes = Prototypes().getInstance()
 
-    fun getInstance(): GameManager
-    {
-        return instance ?: GameManager()
-    }
+    // Factories
+    val factories: MonsterFactory = MonsterFactory().getInstance()
 
     // Run at the start of the game
     private fun startGame()
