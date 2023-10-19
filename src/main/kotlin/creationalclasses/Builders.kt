@@ -11,10 +11,9 @@ class Builders
     companion object {
         private val instance: Builders? = null
 
-    }
-
-    fun getInstance(): Builders {
-        return instance ?: Builders()
+        fun getInstance(): Builders {
+            return instance ?: Builders()
+        }
     }
 
     val basicArmorBuilder: ArmorBuilder = BasicArmorBuilder()
