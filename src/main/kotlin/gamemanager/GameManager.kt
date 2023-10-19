@@ -3,7 +3,7 @@ package gamemanager
 import creationalclasses.*
 import creationals.factories.*
 
-class GameManager
+class GameManager private constructor()
 {
     var endGame: Boolean = false
 
@@ -11,11 +11,10 @@ class GameManager
     companion object
     {
         private val instance: GameManager? = null
-    }
-
-    fun getInstance(): GameManager
-    {
-        return instance ?: GameManager()
+        fun getInstance(): GameManager
+        {
+            return instance ?: GameManager()
+        }
     }
 
     init {
@@ -23,13 +22,13 @@ class GameManager
     }
 
     // Builders
-    val builders: Builders = Builders().getInstance()
+    val builders: Builders = Builders.getInstance()
 
     // Prototypes
-    val prototypes: Prototypes = Prototypes().getInstance()
+    val prototypes: Prototypes = Prototypes.getInstance()
 
     // Factories
-    val factories: MonsterFactory = MonsterFactory().getInstance()
+    val factories: MonsterFactory = MonsterFactory.getInstance()
 
     // Run at the start of the game
     private fun startGame()

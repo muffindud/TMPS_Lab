@@ -7,11 +7,10 @@ class MonsterFactory
     companion object
     {
         private val instance: MonsterFactory? = null
-    }
-
-    fun getInstance(): MonsterFactory
-    {
-        return instance ?: MonsterFactory()
+        fun getInstance(): MonsterFactory
+        {
+            return instance ?: MonsterFactory()
+        }
     }
 
     fun createGoblin(x: Int = 0, y: Int = 0): Monster = Monster(10, x, y, "Goblin")

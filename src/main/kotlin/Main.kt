@@ -2,5 +2,5 @@ import gamemanager.GameManager
 
 fun main()
 {
-    var game: GameManager = GameManager().getInstance()
+    var game: GameManager = GameManager.getInstance()
 }

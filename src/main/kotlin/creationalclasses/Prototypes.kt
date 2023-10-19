@@ -6,13 +6,12 @@ class Prototypes
 {
     companion object {
         private val instance: Prototypes? = null
+        fun getInstance(): Prototypes {
+            return instance ?: Prototypes()
+        }
     }
 
-    fun getInstance(): Prototypes {
-        return instance ?: Prototypes()
-    }
-
-    val builders: Builders = Builders().getInstance()
+    val builders: Builders = Builders.getInstance()
 
     val magePlayerBasicLoadout: MagePlayer = MagePlayer(
         armor = builders.basicArmorBuilder.build(),
