@@ -99,4 +99,4 @@ class Prototypes
 
 ## Screenshots
 
-![Lab2 class diagram](reports/img/Diagram2.png)
+![Lab2 class diagram](img/Diagram2.png)
