@@ -1,4 +1,4 @@
-package creationals.builders.weaponbuilder.physicalweapons
+package patterns.creationals.builders.weaponbuilder.physicalweapons
 
 class UncommonSwordBuilder: APhysicalWeaponBuilder()
 {

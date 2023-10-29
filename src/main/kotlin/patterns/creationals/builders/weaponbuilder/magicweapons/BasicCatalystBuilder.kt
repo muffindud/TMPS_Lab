@@ -1,4 +1,4 @@
-package creationals.builders.weaponbuilder.magicweapons
+package patterns.creationals.builders.weaponbuilder.magicweapons
 
 class BasicCatalystBuilder: AMagicWeaponBuilder()
 {

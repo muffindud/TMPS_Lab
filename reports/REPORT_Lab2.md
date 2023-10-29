@@ -24,7 +24,7 @@
 ### Builder Pattern
 When calling the build class form the armor builder, the armor object is created with the specified parameters for the 
 required kind of armor.
-#### creationals.builders.ArmorBuilder.kt
+#### patterns.creationals.builders.ArmorBuilder.kt
 ```kotlin
 abstract class ArmorBuilder
 {
@@ -41,7 +41,7 @@ abstract class ArmorBuilder
 ### Factory Pattern
 When calling the createGoblin function from the monster factory, a new monster object is created with the specified parameters.
 The factory pattern allows for the creation of different types of monsters, in this case the goblin and the orc.
-#### creationals.factories.MonsterFactory.kt
+#### patterns.creationals.factories.MonsterFactory.kt
 ```kotlin
 class MonsterFactory
 {
@@ -56,7 +56,7 @@ class MonsterFactory
 ### Singleton Pattern
 The singleton pattern is used to restrict the instantiation of a class to one object. In this case the game manager is a singleton, 
 since multiple instances of the game manager would break the game logic.
-#### creationals.singletons.Game.kt
+#### patterns.creationals.singletons.Game.kt
 ```kotlin
 class GameManager
 {
@@ -79,7 +79,7 @@ class GameManager
 ### Prototype Pattern
 The prototype pattern is used to create a duplicate object or clone of the current object to enhance performance and 
 avoid multiple classes for concrete implementations.
-#### creationals.prototypes.MonsterPrototype.kt
+#### patterns.creationals.prototypes.MonsterPrototype.kt
 ```kotlin
 class Prototypes
 {

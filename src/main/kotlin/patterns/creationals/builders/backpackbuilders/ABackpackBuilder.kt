@@ -1,6 +1,6 @@
-package creationals.builders.backpackbuilders
+package patterns.creationals.builders.backpackbuilders
 
-import creationals.builders.IBuilder
+import patterns.creationals.builders.IBuilder
 import item.equipment.backpack.Backpack
 
 abstract class ABackpackBuilder: IBuilder

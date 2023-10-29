@@ -1,4 +1,4 @@
-package creationals.builders.backpackbuilders
+package patterns.creationals.builders.backpackbuilders
 
 class UncommonBackpackBuilder: ABackpackBuilder()
 {

@@ -1,4 +1,4 @@
-package creationals.factories
+package patterns.creationals.factories
 
 import character.npc.monster.*
 

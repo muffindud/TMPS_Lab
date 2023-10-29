@@ -1,7 +1,7 @@
 package gameManager
 
 import creationalClasses.*
-import creationals.factories.*
+import patterns.creationals.factories.*
 
 class GameManager private constructor()
 {

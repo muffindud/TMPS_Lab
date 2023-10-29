@@ -1,4 +1,4 @@
-package creationals.builders.armorbuilders
+package patterns.creationals.builders.armorbuilders
 
 class BasicArmorBuilder: AArmorBuilder()
 {

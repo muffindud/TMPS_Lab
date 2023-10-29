@@ -1,10 +1,10 @@
 package creationalClasses
 
-import creationals.builders.armorbuilders.*
-import creationals.builders.backpackbuilders.*
-import creationals.builders.weaponbuilder.*
-import creationals.builders.weaponbuilder.magicweapons.*
-import creationals.builders.weaponbuilder.physicalweapons.*
+import patterns.creationals.builders.armorbuilders.*
+import patterns.creationals.builders.backpackbuilders.*
+import patterns.creationals.builders.weaponbuilder.*
+import patterns.creationals.builders.weaponbuilder.magicweapons.*
+import patterns.creationals.builders.weaponbuilder.physicalweapons.*
 
 class Builders
 {

@@ -1,5 +1,5 @@
-package creationals.builders.armorbuilders
-import creationals.builders.IBuilder
+package patterns.creationals.builders.armorbuilders
+import patterns.creationals.builders.IBuilder
 import item.equipment.armor.Armor
 
 

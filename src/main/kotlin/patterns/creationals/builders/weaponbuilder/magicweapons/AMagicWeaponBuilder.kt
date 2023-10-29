@@ -1,6 +1,6 @@
-package creationals.builders.weaponbuilder.magicweapons
+package patterns.creationals.builders.weaponbuilder.magicweapons
 
-import creationals.builders.weaponbuilder.IWeaponBuilder
+import patterns.creationals.builders.weaponbuilder.IWeaponBuilder
 import item.equipment.weapon.*
 
 abstract class AMagicWeaponBuilder: IWeaponBuilder
