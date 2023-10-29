@@ -1,6 +1,6 @@
-package item.equipment
+package game.item.equipment
 
-import item.IItem
+import game.item.IItem
 
 abstract class AEquipment: IItem
 {

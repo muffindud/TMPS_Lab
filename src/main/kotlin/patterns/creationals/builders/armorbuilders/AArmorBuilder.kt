@@ -1,6 +1,6 @@
 package patterns.creationals.builders.armorbuilders
 import patterns.creationals.builders.IBuilder
-import item.equipment.armor.Armor
+import game.item.equipment.armor.Armor
 
 
 abstract class AArmorBuilder: IBuilder

@@ -1,4 +1,4 @@
-package creationalClasses
+package patterns.creationals.creationalClasses
 
 import patterns.creationals.builders.armorbuilders.*
 import patterns.creationals.builders.backpackbuilders.*

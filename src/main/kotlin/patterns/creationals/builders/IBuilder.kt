@@ -1,6 +1,6 @@
 package patterns.creationals.builders
 
-import item.IItem
+import game.item.IItem
 
 interface IBuilder {
     var weight: Int

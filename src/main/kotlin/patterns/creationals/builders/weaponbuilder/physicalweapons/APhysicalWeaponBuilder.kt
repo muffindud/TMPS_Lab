@@ -1,7 +1,7 @@
 package patterns.creationals.builders.weaponbuilder.physicalweapons
 
 import patterns.creationals.builders.weaponbuilder.IWeaponBuilder
-import item.equipment.weapon.*
+import game.item.equipment.weapon.*
 
 abstract class APhysicalWeaponBuilder: IWeaponBuilder
 {

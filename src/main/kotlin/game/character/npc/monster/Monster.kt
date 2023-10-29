@@ -1,7 +1,7 @@
-package character.npc.monster
+package game.character.npc.monster
 
-import character.ICharacter
-import character.npc.INPC
+import game.character.ICharacter
+import game.character.npc.INPC
 
 class Monster(
     override var healthPoints: Int,

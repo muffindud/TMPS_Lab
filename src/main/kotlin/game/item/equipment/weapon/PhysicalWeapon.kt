@@ -1,4 +1,4 @@
-package item.equipment.weapon
+package game.item.equipment.weapon
 
 class PhysicalWeapon(override var attackDamage: Int, override var weight: Int): AWeapon()
 {

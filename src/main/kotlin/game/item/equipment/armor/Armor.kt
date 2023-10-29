@@ -1,6 +1,6 @@
-package item.equipment.armor
+package game.item.equipment.armor
 
-import item.equipment.AEquipment
+import game.item.equipment.AEquipment
 
 class Armor(var physicalDefence: Int, var magicDefence: Int, override var weight: Int): AEquipment()
 {

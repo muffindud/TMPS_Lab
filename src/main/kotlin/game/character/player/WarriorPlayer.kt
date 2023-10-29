@@ -1,9 +1,9 @@
-package character.player
+package game.character.player
 
-import item.equipment.armor.Armor
-import item.equipment.backpack.Backpack
-import item.equipment.weapon.PhysicalWeapon
-import item.equipment.weapon.AWeapon
+import game.item.equipment.armor.Armor
+import game.item.equipment.backpack.Backpack
+import game.item.equipment.weapon.PhysicalWeapon
+import game.item.equipment.weapon.AWeapon
 
 class WarriorPlayer
     (

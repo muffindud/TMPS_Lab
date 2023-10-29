@@ -1,6 +1,6 @@
 package patterns.creationals.factories
 
-import character.npc.monster.*
+import game.character.npc.monster.*
 
 class MonsterFactory
 {

@@ -1,8 +1,8 @@
-package creationalClasses
+package patterns.creationals.creationalClasses
 
-import character.player.*
-import item.equipment.weapon.MagicWeapon
-import item.equipment.weapon.PhysicalWeapon
+import game.character.player.*
+import game.item.equipment.weapon.MagicWeapon
+import game.item.equipment.weapon.PhysicalWeapon
 
 class Prototypes
 {

@@ -1,7 +1,7 @@
-package item.equipment.backpack
+package game.item.equipment.backpack
 
-import item.IItem
-import item.equipment.AEquipment
+import game.item.IItem
+import game.item.equipment.AEquipment
 
 class Backpack(override var slots: Int, var backpackSlots: Int, override var weight: Int): AEquipment ()
 {
@@ -12,7 +12,7 @@ class Backpack(override var slots: Int, var backpackSlots: Int, override var wei
         if (occupiedSlots + item.slots <= slots) {
             items.add(item)
             occupiedSlots += item.slots
-            // TODO: Remove item from world
+            // TODO: Remove game.item from world
         }
         else {
             println("Not enough space in backpack")
