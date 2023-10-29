@@ -1,4 +1,4 @@
-import gamemanager.GameManager
+import gameManager.GameManager
 
 fun main()
 {

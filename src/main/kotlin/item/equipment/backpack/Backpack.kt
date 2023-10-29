@@ -1,14 +1,14 @@
 package item.equipment.backpack
 
-import item.Item
-import item.equipment.Equipment
+import item.IItem
+import item.equipment.AEquipment
 
-class Backpack(override var slots: Int, var backpackSlots: Int, override var weight: Int): Equipment ()
+class Backpack(override var slots: Int, var backpackSlots: Int, override var weight: Int): AEquipment ()
 {
-    var items: MutableList<Item> = mutableListOf()
+    var items: MutableList<IItem> = mutableListOf()
     var occupiedSlots: Int = 0
 
-    fun addItem(item: Item) {
+    fun addItem(item: IItem) {
         if (occupiedSlots + item.slots <= slots) {
             items.add(item)
             occupiedSlots += item.slots
@@ -19,7 +19,7 @@ class Backpack(override var slots: Int, var backpackSlots: Int, override var wei
         }
     }
 
-    fun removeItem(item: Item) {
+    fun removeItem(item: IItem) {
         items.remove(item)
         occupiedSlots -= item.slots
         item.drop()

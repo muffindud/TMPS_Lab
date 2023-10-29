@@ -1,6 +1,6 @@
-package gamemanager
+package gameManager
 
-import creationalclasses.*
+import creationalClasses.*
 import creationals.factories.*
 
 class GameManager private constructor()

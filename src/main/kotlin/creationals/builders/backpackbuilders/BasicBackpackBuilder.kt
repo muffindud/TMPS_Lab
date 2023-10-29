@@ -1,6 +1,6 @@
 package creationals.builders.backpackbuilders
 
-class BasicBackpackBuilder: BackpackBuilder()
+class BasicBackpackBuilder: ABackpackBuilder()
 {
     override var slots: Int = 10
     override var backpackSlots: Int = 10

@@ -1,8 +1,6 @@
 package creationals.builders.weaponbuilder.physicalweapons
 
-import creationals.builders.weaponbuilder.WeaponBuilder
-
-class BasicSwordBuilder: PhysicalWeaponBuilder()
+class BasicSwordBuilder: APhysicalWeaponBuilder()
 {
     override var attackDamage: Int = 15
     override var weight: Int = 10

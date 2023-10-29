@@ -1,11 +1,11 @@
 package character
 
-interface Character
+interface ICharacter
 {
     var healthPoints: Int
     var xPosition: Int
     var yPosition: Int
 
-    fun attack(target: Character)
+    fun attack(target: ICharacter)
     fun getCharacterType(): String
 }

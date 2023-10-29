@@ -1,16 +1,16 @@
 package character.npc.monster
 
-import character.Character
-import character.npc.NPC
+import character.ICharacter
+import character.npc.INPC
 
 class Monster(
     override var healthPoints: Int,
     override var xPosition: Int,
     override var yPosition: Int,
     var type: String
-): NPC
+): INPC
 {
-    override fun attack(target: Character) {
+    override fun attack(target: ICharacter) {
         TODO("Not yet implemented")
     }
 

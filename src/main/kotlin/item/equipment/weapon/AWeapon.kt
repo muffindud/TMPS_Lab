@@ -1,8 +1,8 @@
 package item.equipment.weapon
 
-import item.equipment.Equipment
+import item.equipment.AEquipment
 
-abstract class Weapon: Equipment()
+abstract class AWeapon: AEquipment()
 {
     open var attackDamage: Int = 0
     override var slots: Int = 1

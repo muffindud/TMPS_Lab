@@ -1,8 +1,8 @@
 package item.equipment
 
-import item.Item
+import item.IItem
 
-abstract class Equipment: Item
+abstract class AEquipment: IItem
 {
     override fun drop() {
         TODO("Not yet implemented")

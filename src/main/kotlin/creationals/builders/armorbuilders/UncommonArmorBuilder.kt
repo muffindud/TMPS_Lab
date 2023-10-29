@@ -1,6 +1,6 @@
 package creationals.builders.armorbuilders
 
-class UncommonArmorBuilder: ArmorBuilder()
+class UncommonArmorBuilder: AArmorBuilder()
 {
     override var physicalDefence: Int = 7
     override var magicDefence: Int = 7

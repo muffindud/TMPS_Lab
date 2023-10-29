@@ -1,10 +1,9 @@
 package character.player
 
-import character.Character
 import item.equipment.armor.Armor
 import item.equipment.backpack.Backpack
 import item.equipment.weapon.PhysicalWeapon
-import item.equipment.weapon.Weapon
+import item.equipment.weapon.AWeapon
 
 class WarriorPlayer
     (
@@ -13,10 +12,10 @@ class WarriorPlayer
         override var yPosition: Int,
         armor: Armor,
         backpack: Backpack,
-        weapon: Weapon
-    ): Player(armor, backpack, weapon)
+        weapon: AWeapon
+    ): APlayer(armor, backpack, weapon)
 {
-    override fun clone(source: Player): WarriorPlayer {
+    override fun clone(source: APlayer): WarriorPlayer {
         return WarriorPlayer(
             source.playerName,
             source.xPosition,

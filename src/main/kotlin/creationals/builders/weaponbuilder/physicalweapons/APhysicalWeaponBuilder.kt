@@ -1,9 +1,9 @@
 package creationals.builders.weaponbuilder.physicalweapons
 
-import creationals.builders.weaponbuilder.WeaponBuilder
+import creationals.builders.weaponbuilder.IWeaponBuilder
 import item.equipment.weapon.*
 
-abstract class PhysicalWeaponBuilder: WeaponBuilder
+abstract class APhysicalWeaponBuilder: IWeaponBuilder
 {
     override fun build(): PhysicalWeapon {
         return PhysicalWeapon(attackDamage, weight)

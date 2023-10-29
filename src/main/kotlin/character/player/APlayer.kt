@@ -1,16 +1,16 @@
 package character.player
 
-import character.Character
+import character.ICharacter
 import item.equipment.armor.Armor
-import item.equipment.weapon.Weapon
+import item.equipment.weapon.AWeapon
 import item.equipment.backpack.Backpack
 
-abstract class Player
+abstract class APlayer
     (
         var armor: Armor,
         var backpack: Backpack,
-        var weapon: Weapon
-    ): Character
+        var weapon: AWeapon
+    ): ICharacter
 {
     override var healthPoints: Int = 200
     abstract var playerName: String
@@ -34,7 +34,7 @@ abstract class Player
         this.physicalDefense += this.armor.physicalDefence
     }
 
-    fun equipWeapon (weapon: Weapon) {
+    fun equipWeapon (weapon: AWeapon) {
         this.attackPower -= this.weapon.attackDamage
         this.weapon.drop()
         this.weapon = weapon
@@ -42,7 +42,7 @@ abstract class Player
 
     }
 
-    private fun attackPlayer (target: Player) {
+    private fun attackPlayer (target: APlayer) {
         var damage: Int = 0
 
         if (this.weapon.getWeaponType() == "Physical") {
@@ -61,14 +61,14 @@ abstract class Player
         return "Player"
     }
 
-    override fun attack (target: Character) {
+    override fun attack (target: ICharacter) {
         if (target.getCharacterType() == "Player") {
-            attackPlayer(target as Player)
+            attackPlayer(target as APlayer)
         }
         else {
             var damage: Int = this.attackPower
         }
     }
 
-    abstract fun clone(source: Player): Player
+    abstract fun clone(source: APlayer): APlayer
 }

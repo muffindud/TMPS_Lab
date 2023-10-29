@@ -1,8 +1,6 @@
 package creationals.builders.armorbuilders
 
-import item.equipment.armor.Armor
-
-class BasicArmorBuilder: ArmorBuilder()
+class BasicArmorBuilder: AArmorBuilder()
 {
     override var physicalDefence: Int = 5
     override var magicDefence: Int = 5

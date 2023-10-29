@@ -1,8 +1,6 @@
 package creationals.builders.weaponbuilder.magicweapons
 
-import creationals.builders.weaponbuilder.WeaponBuilder
-
-class BasicCatalystBuilder: MagicWeaponBuilder()
+class BasicCatalystBuilder: AMagicWeaponBuilder()
 {
     override var attackDamage: Int = 10
     override var weight: Int = 5

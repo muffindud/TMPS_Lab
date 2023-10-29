@@ -1,14 +1,14 @@
 package creationals.builders.backpackbuilders
 
+import creationals.builders.IBuilder
 import item.equipment.backpack.Backpack
 
-abstract class BackpackBuilder
+abstract class ABackpackBuilder: IBuilder
 {
     abstract var slots: Int
     abstract var backpackSlots: Int
-    abstract var weight: Int
 
-    fun build(): Backpack {
+    override fun build(): Backpack {
         return Backpack(slots, backpackSlots, weight)
     }
 }
