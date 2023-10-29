@@ -1,5 +1,7 @@
 package game.item.equipment.weapon.enchanted
 
-interface IEnchantedWeapon {
+import game.enchantments.IEnchantment
 
+interface IEnchantedWeapon {
+    var enchantments: List<IEnchantment>
 }

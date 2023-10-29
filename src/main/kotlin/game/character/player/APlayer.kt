@@ -67,6 +67,11 @@ abstract class APlayer
         }
         else {
             var damage: Int = this.attackPower
+            target.healthPoints -= damage
+        }
+
+        if (this.weapon.getWeaponType() == "Enchanted Magic" || this.weapon.getWeaponType() == "Enchanted Physical") {
+            TODO("Apply status effect to target")
         }
     }
 

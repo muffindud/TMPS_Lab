@@ -1,6 +1,6 @@
 package game.item.equipment.weapon
 
-class PhysicalWeapon(override var attackDamage: Int, override var weight: Int): AWeapon()
+open class PhysicalWeapon(override var attackDamage: Int, override var weight: Int): AWeapon()
 {
     override var slots: Int = 3
 
