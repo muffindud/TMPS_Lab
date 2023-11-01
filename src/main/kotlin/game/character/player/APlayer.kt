@@ -1,15 +1,18 @@
 package game.character.player
 
 import game.character.ICharacter
+import game.inventory.PlayerInventory
 import game.item.equipment.armor.Armor
 import game.item.equipment.weapon.AWeapon
 import game.item.equipment.backpack.Backpack
+import patterns.structurals.bridge.InventoryManager
 
 abstract class APlayer
     (
         var armor: Armor,
         var backpack: Backpack,
-        var weapon: AWeapon
+        var weapon: AWeapon,
+        var inventoryManager: InventoryManager
     ): ICharacter
 {
     override var healthPoints: Int = 200
@@ -20,35 +23,37 @@ abstract class APlayer
     var physicalDefense: Int = 0
 
     init {
-        this.attackPower += this.weapon.attackDamage
-        this.magicDefense += this.armor.magicDefence
-        this.physicalDefense += this.armor.physicalDefence
+        inventoryManager.equipArmor(armor)
+        inventoryManager.equipWeapon(weapon)
+        inventoryManager.equipBackpack(backpack)
+
+        this.attackPower += this.inventoryManager.getWeapon()!!.attackDamage
+        this.magicDefense += this.inventoryManager.getArmor()!!.magicDefence
+        this.physicalDefense += this.inventoryManager.getArmor()!!.physicalDefence
     }
 
     fun equipArmor (armor: Armor) {
-        this.magicDefense -= this.armor.magicDefence
-        this.physicalDefense -= this.armor.physicalDefence
-        this.armor.drop()
-        this.armor = armor
-        this.magicDefense += this.armor.magicDefence
-        this.physicalDefense += this.armor.physicalDefence
+        this.magicDefense -= this.inventoryManager.getArmor()!!.magicDefence
+        this.physicalDefense -= this.inventoryManager.getArmor()!!.physicalDefence
+        this.inventoryManager.equipArmor(armor)
+        this.magicDefense += this.inventoryManager.getArmor()!!.magicDefence
+        this.physicalDefense += this.inventoryManager.getArmor()!!.physicalDefence
     }
 
     fun equipWeapon (weapon: AWeapon) {
-        this.attackPower -= this.weapon.attackDamage
-        this.weapon.drop()
-        this.weapon = weapon
-        this.attackPower += this.weapon.attackDamage
+        this.attackPower -= this.inventoryManager.getWeapon()!!.attackDamage
+        this.inventoryManager.equipWeapon(weapon)
+        this.attackPower += this.inventoryManager.getWeapon()!!.attackDamage
 
     }
 
     private fun attackPlayer (target: APlayer) {
         var damage: Int = 0
 
-        if (this.weapon.getWeaponType() == "Physical") {
+        if (this.inventoryManager.getWeapon()!!.getWeaponType() == "Physical") {
             damage = this.attackPower - target.physicalDefense
         }
-        else if (this.weapon.getWeaponType() == "Magic") {
+        else if (this.inventoryManager.getWeapon()!!.getWeaponType() == "Magic") {
             damage = this.attackPower - target.magicDefense
         }
 
@@ -70,7 +75,7 @@ abstract class APlayer
             target.healthPoints -= damage
         }
 
-        if (this.weapon.getWeaponType() == "Enchanted Magic" || this.weapon.getWeaponType() == "Enchanted Physical") {
+        if (this.inventoryManager.getWeapon()!!.getWeaponType() == "Enchanted Magic" || this.inventoryManager.getWeapon()!!.getWeaponType() == "Enchanted Physical") {
             TODO("Apply status effect to target")
         }
     }
