@@ -95,4 +95,4 @@ class EnchantedMagicWeapon(...): MagicWeapon(...), IEnchantedWeapon {
 
 ## Conclusions / Screenshots / Results
 
-![Lab3 class diagram](reports/img/Diagram3.png)
+![Lab3 class diagram](img/Diagram3.png)

@@ -2,6 +2,8 @@ package gameManager
 
 import patterns.creationals.creationalClasses.*
 import patterns.creationals.factories.*
+import game.ui.*
+import patterns.structurals.facade.UI
 
 class GameManager private constructor()
 {
@@ -29,6 +31,13 @@ class GameManager private constructor()
 
     // Factories
     val factories: MonsterFactory = MonsterFactory.getInstance()
+
+    val ui: UI = UI(
+        Menu,
+        MapWindow,
+        InventoryWindow,
+        Toolbar
+    )
 
     // Run at the start of the game
     private fun startGame()

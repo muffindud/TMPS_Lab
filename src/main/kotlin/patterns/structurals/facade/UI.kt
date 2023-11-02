@@ -5,17 +5,20 @@ import game.ui.MapWindow
 import game.ui.Menu
 import game.ui.Toolbar
 
-class UI {
-    var menu: Menu = Menu
+class UI
+    (
+            var menu: Menu,
+            var mapWindow: MapWindow,
+            var inventoryWindow: InventoryWindow,
+            var toolbar: Toolbar
+    )
+{
     var menuVisible: Boolean = menu.visible
 
-    var mapWindow: MapWindow = MapWindow
     var mapWindowVisible: Boolean = mapWindow.visible
 
-    var inventoryWindow: InventoryWindow = InventoryWindow
     var inventoryWindowVisible: Boolean = inventoryWindow.visible
 
-    var toolbar: Toolbar = Toolbar
     var toolbarVisible: Boolean = toolbar.visible
 
     fun show() {
