@@ -17,6 +17,8 @@ class PlayerProfile {
         this.playerId = playerId
         this.playerName = playerName
         this.playerEmail = playerEmail
+
+        this.saveProfile()
     }
 
     constructor(
@@ -39,5 +41,11 @@ class PlayerProfile {
 
     fun changeName (newName: String) {
         playerName = newName
+        this.saveProfile()
+    }
+
+    fun changeEmail (newEmail: String) {
+        playerEmail = newEmail
+        this.saveProfile()
     }
 }
