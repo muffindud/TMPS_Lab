@@ -7,13 +7,15 @@ import game.crew.Crew
 import game.equipment.IEquipment
 import game.player.playerState.PlayerState
 import serverAPI.Server
+import game.player.playerState.*
+import gameManager.EventManager
 
 class Player(
     profile: PlayerProfile,
     server: Server,
-    playerState: PlayerState
+    var playerState: PlayerState,
+    var eventManager: EventManager
 ) {
-    var playerState: PlayerState = playerState
 
     class PlayerGarage (var playerData: String) {
         var tanks: List<ITank> = listOf()
@@ -49,7 +51,22 @@ class Player(
 
     fun changeState(newState: PlayerState) {
         this.playerState = newState
-        TODO("Remove from player from listeners in observer pattern")
+        when (newState) {
+            is ActiveState -> {
+                eventManager.addListener(player=this, eventType="message")
+                eventManager.addListener(player=this, eventType="invitation")
+            }
+
+            is AwayState -> {
+                eventManager.removeListener(player=this, eventType="message")
+                eventManager.removeListener(player=this, eventType="invitation")
+            }
+
+            is InGameState -> {
+                eventManager.addListener(player=this, eventType="message")
+                eventManager.removeListener(player=this, eventType="invitation")
+            }
+        }
     }
 
     fun receiveMessage(message: String, sender: Player) {
