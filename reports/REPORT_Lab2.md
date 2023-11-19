@@ -58,18 +58,18 @@ The singleton pattern is used to restrict the instantiation of a class to one ob
 since multiple instances of the game manager would break the game logic.
 #### patterns.creationals.singletons.Game.kt
 ```kotlin
-class GameManager
+class gameManager.GameManager
 {
     ...
     
     companion object
     {
-        private val instance: GameManager? = null
+        private val instance: gameManager.GameManager? = null
     }
 
-    fun getInstance(): GameManager
+    fun getInstance(): gameManager.GameManager
     {
-        return instance ?: GameManager()
+        return instance ?: gameManager.GameManager()
     }
     ...
 }

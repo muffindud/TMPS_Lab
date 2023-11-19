@@ -1,58 +1,27 @@
 package gameManager
 
-import patterns.creationals.creationalClasses.*
-import patterns.creationals.factories.*
-import game.ui.*
-import patterns.structurals.facade.UI
+object GameManager {
+    var isGameRunning = false
 
-class GameManager private constructor()
-{
-    var endGame: Boolean = false
+    fun startGame() {
+        isGameRunning = true
+        updateGame()
 
-    // Singleton
-    companion object
-    {
-        private val instance: GameManager? = null
-        fun getInstance(): GameManager
-        {
-            return instance ?: GameManager()
-        }
+        // Add start game routines here
     }
 
-    init {
-        startGame()
-    }
+    fun updateGame() {
+        // Add update game routines here
 
-    // Builders
-    val builders: Builders = Builders.getInstance()
-
-    // Prototypes
-    val prototypes: Prototypes = Prototypes.getInstance()
-
-    // Factories
-    val factories: MonsterFactory = MonsterFactory.getInstance()
-
-    val ui: UI = UI(
-        Menu,
-        MapWindow,
-        InventoryWindow,
-        Toolbar
-    )
-
-    // Run at the start of the game
-    private fun startGame()
-    {
-        //
-
-        while (!endGame)
-        {
+        if (isGameRunning) {
             updateGame()
         }
+        else {
+            endGame()
+        }
     }
-    
-    // Run every frame
-    private fun updateGame()
-    {
-        //
+
+    fun endGame() {
+        // Add end game routines here
     }
 }
