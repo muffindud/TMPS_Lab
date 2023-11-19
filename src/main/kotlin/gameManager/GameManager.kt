@@ -1,7 +1,11 @@
 package gameManager
 
+import serverAPI.Server
+
 object GameManager {
     var isGameRunning = false
+
+    var server: Server = Server()
 
     fun startGame() {
         isGameRunning = true
