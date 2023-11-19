@@ -5,7 +5,7 @@ import serverAPI.Server
 object GameManager {
     var isGameRunning = false
 
-    var server: Server = Server()
+    var server: Server = Server.getInstance()
 
     fun startGame() {
         isGameRunning = true
