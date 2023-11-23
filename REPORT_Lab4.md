@@ -18,7 +18,10 @@ be in your system.
 allows the class for an object to apparently change at run-time.
 * __Observer__: The observer pattern is used to allow an object to publish changes to its state. Other objects subscribe
 to be immediately notified of any changes.
-* 
+* __Template__: The template pattern is used to create a group of subclasses that have to execute a similar group of
+methods. In this pattern, a super class method is created that defines the methods to be executed, but the method
+itself is not implemented in this class. Rather, abstract methods are created and the sub-classes inherit the abstract
+methods and implement them in their own way.
 
 ## Implementation
 
@@ -74,4 +77,57 @@ object EventManager {
 }
 ```
 
-## Conclusions / Screenshots / Results
+### Template Pattern
+The template pattern is used on the Equipment abstract class. The modified behaviour is the __applyEffect()__ method
+which is implemented in the subclasses.
+
+```kotlin
+abstract class Equipment(
+    ...
+) {
+    ...
+    fun use() {
+        fun use(crews: List<Crew>? = null, tank: ITank? = null) {
+            if (checkCount() && checkCooldown()) {
+                startCooldown()
+                applyEffect(crews, tank)
+            }
+        }
+    }
+
+    abstract fun applyEffect()
+}
+```
+
+```kotlin
+class Heal (...): Equipment(...) {
+    ...
+    override fun applyEffect(crews: List<Crew>?, tank: ITank?) {
+        crews?.forEach {
+            it.health += crewHealth
+            if (it.health > it.maxHealth) {
+                it.health = it.maxHealth
+            }
+        }
+    }
+}
+```
+
+```kotlin
+class Repair (...): Equipment (...) {
+    ...
+    override fun applyEffect(crews: List<Crew>?, tank: ITank?) {
+        if (tank != null) {
+            tank.health += tankHealth
+            if (tank.health > tank.maxHealth) {
+                tank.health = tank.maxHealth
+            }
+        }
+    }
+}
+```
+
+## Conclusions / Screenshots / Results:
+The Behavioral Design Patterns are concerned with algorithms and the assignment of responsibilities between objects. 
+They are often used to manage algorithms, relationships and responsibilities between objects, sometimes under the form
+of events.
