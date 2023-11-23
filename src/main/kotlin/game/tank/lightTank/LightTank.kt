@@ -7,6 +7,7 @@ class LightTank(
     override var tier: Int,
     override var nextTank: ITank?,
     override var health: Float,
+    override var maxHealth: Float,
     override var damage: Float
 ) : ITank {
     override fun takeDamage(damage: Float) {

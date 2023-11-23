@@ -4,7 +4,7 @@ import game.playerProfile.PlayerProfile
 
 import game.tank.ITank
 import game.crew.Crew
-import game.equipment.IEquipment
+import game.equipment.Equipment
 import game.player.playerState.PlayerState
 import serverAPI.Server
 import game.player.playerState.*
@@ -34,7 +34,7 @@ class Player(
     }
 
     class PlayerEquipment (var playerData: String) {
-        var equipments: HashMap<IEquipment, Int> = hashMapOf()
+        var equipments: HashMap<Equipment, Int> = hashMapOf()
 
         init {
             // Get the equipments from playerData and add them to the list
